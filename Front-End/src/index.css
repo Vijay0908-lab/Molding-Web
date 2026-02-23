@@ -1,1 +1,41 @@
 @import "tailwindcss";
+
+@layer components {
+  .PrimaryButton {
+    background-color: rgb(24, 104, 224);
+    color: white;
+    padding: 1rem 2.5rem; /* px-10 py-4 */
+    border-radius: 9999px; /* rounded-full */
+    font-weight: 700; /* font-bold */
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1); /* shadow-lg */
+  }
+
+  .PrimaryButton:hover {
+    background-color: #1d4ed8; /* blue-700 */
+  }
+
+  .PrimaryButton:active {
+    transform: scale(0.95);
+  }
+
+
+
+   .SecondaryButton {
+    background-color: black;
+    color: white;
+    padding: 1rem 2.5rem; /* px-10 py-4 */
+    border-radius: 9999px; /* rounded-full */
+    font-weight: 700; /* font-bold */
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1); /* shadow-lg */
+  }
+
+  .SecondaryButton:hover {
+    background-color: #374151; /* bg-gray-700 */
+  }
+
+  .SecondaryButton:active {
+    transform: scale(0.95);
+  }
+}

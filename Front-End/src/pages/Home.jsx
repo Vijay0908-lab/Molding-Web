@@ -1,8 +1,19 @@
 function Home(){
     return (
-        <div className="home-page">
-            <h1>Welcome to Paras Molding Work</h1>
-            <p>Your one-stop solution for all your Hand molding needs. We specialize in high-quality plastic injection molding services, delivering precision and excellence in every project. Whether you're looking for prototyping, production, or custom solutions, we have the expertise to meet your requirements. Explore our services and discover how we can help bring your ideas to life.</p>
+        <div className="h-[60vh] w-full bg-[url(/Background.png)] bg-cover bg-center bg-no-repeat">
+            <div className="h-[60vh]  flex flex-col justify-center items-center px-8 py-40">
+                <h1 className="text-4xl md:text-6xl font-bold text-black mb-6 text-center max-w-5xl leading-tight">
+                    Premium Hand Molding for Industrial Excellence
+                </h1>
+                <p className="text-base md:text-xl text-black/50 max-w-3xl text-center leading-relaxed mb-10">
+                    Elevate your manufacturing, influence your market, and unlock elite precision with Paras Molding Work—crafted exclusively for industrial professionals.
+                </p>
+                <div className="flex gap-2"> 
+
+                <button className="PrimaryButton">Orders</button>
+                <button className="SecondaryButton">About Us</button>
+                </div>
+            </div>
         </div>
     )
 }
