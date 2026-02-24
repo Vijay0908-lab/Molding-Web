@@ -1,9 +1,10 @@
 import { useState, useEffect } from 'react';
-import {useLocation } from 'react-router-dom';
+import {useLocation , useNavigate } from 'react-router-dom';
 
 export function Header(){
     const [isScrolled, setIsScrolled] = useState(false);
     const location = useLocation();
+    const navigate = useNavigate();
 
     useEffect(() => {
         const handleScroll = () => {
@@ -19,15 +20,17 @@ export function Header(){
     }, []);
 
 
-     const baseclass = "text-black hover:underline hover:decoration-[rgb(24,104,224)] hover:underline-offset-2 hover:decoration-4  font-medium";
-            const activeClass = "text-black   underline font-medium decoration-[rgb(24,104,224)] underline-offset-2 decoration-4";
+     const baseclass = `${isScrolled ? 'text-white' : 'text-black'} hover:underline hover:decoration-[rgb(24,104,224)] hover:underline-offset-2 hover:decoration-4 font-medium transition-colors duration-300`;
+     const activeClass = `${isScrolled ? 'text-white' : 'text-black'} underline font-medium decoration-[rgb(24,104,224)] underline-offset-2 decoration-4 transition-colors duration-300`;
     return (
            
         <div className={`fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-8 py-4 transition-all duration-300 ${
-            isScrolled ? 'bg-black shadow-lg' : 'bg-transparent'
+            isScrolled ? 'bg-black shadow-lg ' : 'bg-transparent '
         }`}>
             <div className="flex items-center gap-3">
-                <img src="/logo.png" alt="Logo" className="h-10 w-auto"/>
+                <img src="/logo.png" alt="Logo" className="h-10 w-auto cursor-pointer"  onClick={()=>{
+                    navigate('/')
+                }}/>
                
             </div>
             <div className="SubLinks">

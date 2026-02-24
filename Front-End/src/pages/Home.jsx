@@ -1,6 +1,42 @@
+
+import CardImage from "@/ui/Card";
+
 function Home(){
+
+    const DieData = [{
+        id: 1,
+        title: 'Die 1',
+        description: 'This is the description for Die 1.',      
+        image : '/DieImages/mold1.jpg', 
+    } , 
+    {
+        id:2 , 
+        title : 'Die 2',
+        description: 'this is info about the dies 2 ',
+        image: '/DieImages/mold2.webp',
+    },{
+        id:3 ,
+        title : 'Die 3',
+        description: 'this is info about the dies 3 ',
+        image: '/DieImages/mold3.jpg',
+    },{
+        id:4 ,
+        title : 'Die 4',
+        description: 'this is info about the dies 4 ',
+        image: '/DieImages/mold4.jpg',          
+
+
+    },
+    {
+        id:5 ,
+        title : 'Die 5',        
+        description: 'this is info about the dies 5 ',
+        image: '/DieImages/mld6.jpg',
+    }
+     ]
     return (
-        <div className="h-[60vh] w-full bg-[url(/Background.png)] bg-cover bg-center bg-no-repeat">
+        <>
+        <div className="h-[60vh] w-full bg-[url(/Background.png)] bg-cover bg-center bg-no-repeat ">
             <div className="h-[60vh]  flex flex-col justify-center items-center px-8 py-40">
                 <h1 className="text-4xl md:text-6xl font-bold text-black mb-6 text-center max-w-5xl leading-tight">
                     Premium Hand Molding for Industrial Excellence
@@ -15,6 +51,61 @@ function Home(){
                 </div>
             </div>
         </div>
+
+
+          <div className="Info text-center mt-5">
+
+         <h2 className="text-black font-bold py-1">Our Available Dies</h2>
+         <h5 className="text-black/80 mb-3">"We own these dies and can negotiate the rate per gross based on your order volume."</h5>
+          </div>
+          
+            <div className="container mx-auto px-4 py-8">
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 max-w-6xl mx-auto">
+               {DieData.map((die) => (
+    <CardImage key={die.id} title={die.title} description={die.description} image={die.image} /> 
+  ))}
+              </div>
+            </div>
+
+
+            <div className="Contact text-center ">
+                <h1 className="text-black font-bold py-1">Contact Us</h1>
+
+                <div className="grid grid-cols-1">
+
+               
+               <form className="grid grid-cols-1 text-center">
+                <ul>
+               <li className="fleax space-y-2">
+                <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">Name</label>
+                 <input type="text" 
+                 placeholder="Your Name"
+                 value={FormData.name}
+                 required
+                 />
+               </li>
+
+
+                 <input 
+                 type="Number" 
+                 placeholder="Enter your Mobile Number"
+                 value = {FormData.Number}
+                 required
+                 />
+                 <input
+                 type="email"
+                 placeholder="Enter Email" 
+                 value={FormData.email}/>
+
+                 <textarea 
+                 placeholder="Any suggestion or Question to be answered"
+                 value={FormData.message}/>
+                </ul>
+
+               </form>
+                </div>
+            </div>
+        </>
     )
 }
 export default Home;
