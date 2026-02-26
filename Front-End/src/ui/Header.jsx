@@ -20,11 +20,11 @@ export function Header(){
     }, []);
 
 
-     const baseclass = `${isScrolled ? 'text-white' : 'text-black'} hover:underline hover:decoration-[rgb(24,104,224)] hover:underline-offset-2 hover:decoration-4 font-medium transition-colors duration-300`;
-     const activeClass = `${isScrolled ? 'text-white' : 'text-black'} underline font-medium decoration-[rgb(24,104,224)] underline-offset-2 decoration-4 transition-colors duration-300`;
+     const baseclass = `${isScrolled ? 'text-white' : 'text-black'} hover:underline hover:decoration-[rgb(24,104,224)] hover:underline-offset-2 hover:decoration-4 font-medium transition-colors `;
+     const activeClass = `${isScrolled ? 'text-white' : 'text-black'} underline font-medium decoration-[rgb(24,104,224)] underline-offset-2 decoration-4 transition-colors `;
     return (
            
-        <div className={`fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-8 py-4 transition-all duration-300 ${
+        <div className={`fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-8 py-4 transition-all  ${
             isScrolled ? 'bg-black shadow-lg ' : 'bg-transparent '
         }`}>
             <div className="flex items-center gap-3">
