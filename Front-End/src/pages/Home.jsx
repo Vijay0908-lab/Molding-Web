@@ -62,7 +62,7 @@ function Home(){
             <div className="container mx-auto px-4 py-8">
               <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 max-w-6xl mx-auto">
                {DieData.map((die) => (
-    <CardImage key={die.id} title={die.title} description={die.description} image={die.image} /> 
+    <CardImage key={die.id} id={die.id} title={die.title} description={die.description} image={die.image} /> 
   ))}
               </div>
             </div>

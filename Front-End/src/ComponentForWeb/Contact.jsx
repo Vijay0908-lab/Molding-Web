@@ -1,6 +1,6 @@
 function Contact(){
     return (
-        <div className="max-w-4xl mx-auto p-8 bg-white rounded-lg shadow-sm">
+        <div className="max-w-4xl mx-auto p-8 bg-gray-100 rounded-lg shadow-sm">
   <h1 className="text-3xl font-bold text-black mb-6">Contact Us</h1>
 
   <form className="grid grid-cols-1 gap-6">
