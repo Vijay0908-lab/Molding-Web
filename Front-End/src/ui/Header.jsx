@@ -1,23 +1,34 @@
-import { useState, useEffect } from 'react';
-import {useLocation , useNavigate } from 'react-router-dom';
+import { Phone } from "lucide-react";
+import { useState, useEffect } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 
-export function Header(){
-    const [isScrolled, setIsScrolled] = useState(false);
-    const location = useLocation();
-    const navigate = useNavigate();
+export function Header() {
+  const [isScrolled, setIsScrolled] = useState(false);
+  const location = useLocation();
+  const navigate = useNavigate();
 
-    useEffect(() => {
-        const handleScroll = () => {
-            const scrollPosition = window.scrollY;
-            const viewportHeight = window.innerHeight;
-            const scrollThreshold = viewportHeight * 0.25;
-            
-            setIsScrolled(scrollPosition > scrollThreshold);
-        };
+  useEffect(() => {
+    let throttleTimer = null;
 
-        window.addEventListener('scroll', handleScroll);
-        return () => window.removeEventListener('scroll', handleScroll);
-    }, []);
+    const handleScroll = () => {
+      if (throttleTimer) return;
+
+      throttleTimer = setTimeout(() => {
+        const scrollPosition = window.scrollY;
+        const viewportHeight = window.innerHeight;
+        const scrollThreshold = viewportHeight * 0.2;
+
+        setIsScrolled(scrollPosition > scrollThreshold);
+        throttleTimer = null;
+      }, 50);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      if (throttleTimer) clearTimeout(throttleTimer);
+    };
+  }, []);
 
 
      const baseclass = `${isScrolled ? 'text-white' : 'text-black'} hover:underline hover:decoration-[rgb(24,104,224)] hover:underline-offset-2 hover:decoration-4 font-medium transition-colors `;
@@ -49,5 +60,5 @@ export function Header(){
         </div>
     )
 }
- 
+
 export default Header;
