@@ -40,9 +40,9 @@ export function Header(){
                          
                     </li>
                     <li><a href="/orders" className={(location.pathname === '/orders') ? activeClass : baseclass}>For Orders</a></li>
-                    <li><a href="/die-section" className={(location.pathname === '/die-section') ? activeClass : baseclass}>Die Section</a></li>
+                    {/* <li><a href="/die-section" className={(location.pathname === '/die-section') ? activeClass : baseclass}>Die Section</a></li> */}
                     <li><a href="/about-us" className={(location.pathname === '/about-us') ? activeClass : baseclass}>About Us</a></li>
-                    <li><a href="/contact-us" className={(location.pathname === '/contact-us') ? activeClass : baseclass}>Contact Us</a></li>
+                    {/* <li><a href="/contact-us" className={(location.pathname === '/contact-us') ? activeClass : baseclass}>Contact Us</a></li> */}
                     <li><a href="/sign-up" className={(location.pathname === '/sign-up') ? activeClass : baseclass} >Sign-up</a></li>
                 </ul>
             </div>

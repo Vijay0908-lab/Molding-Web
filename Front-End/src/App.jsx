@@ -23,7 +23,7 @@ export function App(){
         <Routes >
           <Route path="/" element={<Home />} />
           <Route path="/orders" element={<ForOrders />} />
-          <Route path="/die-section" element={<DieSection />} />
+          {/* <Route path="/die-section" element={<DieSection />} /> */}
           <Route path="/about-us" element={<About />} />
           {/* <Route path="/contact-us" element={<Contact />} /> */}
           <Route path="/sign-up" element={<Login />} />
