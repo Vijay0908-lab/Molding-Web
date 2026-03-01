@@ -1,29 +1,56 @@
 
 import CardImage from "@/ui/Card";
 import Contact from "@/ComponentForWeb/Contact";
+
+
+
 function Home(){
 
     const DieData = [{
         id: 1,
         title: 'Die 1',
         description: 'This is the description for Die 1.',      
-        image : '/DieImages/mold1.jpg', 
+        image: {
+            id1:  '/DieImages/mold1.jpg', 
+            id2:  '/DieImages/mold2.webp',
+            id3:  '/DieImages/mold3.jpg',
+           
+        }
     } , 
     {
         id:2 , 
         title : 'Die 2',
         description: 'this is info about the dies 2 ',
-        image: '/DieImages/mold2.webp',
+        image: {
+           
+            id2:  '/DieImages/mold2.webp',
+            id3:  '/DieImages/mold3.jpg',
+            id4:  '/DieImages/mold4.jpg',
+           
+        }
     },{
         id:3 ,
         title : 'Die 3',
         description: 'this is info about the dies 3 ',
-        image: '/DieImages/mold3.jpg',
+        image: {
+           
+            id3:  '/DieImages/mold3.jpg',
+            id4:  '/DieImages/mold4.jpg',
+           
+        }
     },{
         id:4 ,
         title : 'Die 4',
         description: 'this is info about the dies 4 ',
-        image: '/DieImages/mold4.jpg',          
+        image: {
+           id4:  '/DieImages/mold4.jpg',
+           id5:  '/DieImages/mld6.jpg',
+            id1:  '/DieImages/mold1.jpg', 
+            id2:  '/DieImages/mold2.webp',
+            id3:  '/DieImages/mold3.jpg',
+           
+        
+        }   
 
 
     },
@@ -31,7 +58,13 @@ function Home(){
         id:5 ,
         title : 'Die 5',        
         description: 'this is info about the dies 5 ',
-        image: '/DieImages/mld6.jpg',
+       image: {
+           
+            id3:  '/DieImages/mold3.jpg',
+             id1:  '/DieImages/mold1.jpg', 
+            id2:  '/DieImages/mold2.webp',
+           
+        }
     }
      ]
     return (
@@ -62,7 +95,7 @@ function Home(){
             <div className="container mx-auto px-4 py-8">
               <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 max-w-6xl mx-auto">
                {DieData.map((die) => (
-     <CardImage key={die.id} id={die.id} title={die.title} description={die.description} image={die.image} /> 
+     <CardImage item={die} key={die.id} /> 
   ))}
               </div>
             </div>

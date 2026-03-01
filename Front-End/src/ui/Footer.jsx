@@ -4,7 +4,7 @@ export function Footer(){
         <div className="max-w-6xl mx-auto grid grid-cols-4 gap-4  bg-black py-4">
             <div className="text-white">
                 <div className=" flex items-center justify-center">
-                 <img src="/logo.png" alt="Logo" className="h-10 w-auto "/>
+                 <img src="/WhiteLogo.png" alt="Logo" className="h-10 w-auto "/>
                
                 </div>
                 <p className="align-middle">"We believe in quality and responsibility to deliver the best products on time."</p>

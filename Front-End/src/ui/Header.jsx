@@ -39,9 +39,15 @@ export function Header() {
             isScrolled ? 'bg-black shadow-lg ' : 'bg-transparent '
         }`}>
             <div className="flex items-center gap-3">
-                <img src="/logo.png" alt="Logo" className="h-10 w-auto cursor-pointer"  onClick={()=>{
-                    navigate('/')
-                }}/>
+                {isScrolled ? (
+                    <img src="/WhiteLogo.png" alt="Logo" className="h-10 w-auto cursor-pointer"  onClick={()=>{
+                        navigate('/')
+                    }}/>
+                ) : (
+                    <img src="/logo.png" alt="Logo" className="h-10 w-auto cursor-pointer"  onClick={()=>{
+                        navigate('/')
+                }}/>)}
+               
                
             </div>
             <div className="SubLinks">
