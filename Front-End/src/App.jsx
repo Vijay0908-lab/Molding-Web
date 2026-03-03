@@ -28,6 +28,7 @@ export function App(){
            <Route path="/details/:id" element ={<DetailedDie />} />
           {/* <Route path="/die-section" element={<DieSection />} /> */}
           <Route path="/about-us" element={<About />} />
+          
           {/* <Route path="/contact-us" element={<Contact />} /> */}
 
 
