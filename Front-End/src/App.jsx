@@ -1,7 +1,7 @@
-import {  Routes, Route } from "react-router-dom";
+import {  Routes, Route, BrowserRouter, Outlet } from "react-router-dom";
 import { QueryClient , QueryClientProvider } from "@tanstack/react-query";
-import Header from "./ui/Header";
-import Footer from "./ui/Footer";
+import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
+
 import Home from "./pages/Home";
 import ForOrders from "./pages/ForOrders";
 import DieSection from "./pages/DieSection";
@@ -11,6 +11,9 @@ import Login from "./pages/Login";
 import Error from "./pages/ErrorPage";
 import { Navigate } from "react-router-dom";
 import DetailedDie from "./ComponentForWeb/DetailedDie";
+import AppLayout from "./ui/Applayout";
+import DashBoard from "./pages/DashBoard";
+import Protected from "./ui/ProtectedRoute"
 
 
 
@@ -29,31 +32,41 @@ export function App(){
 
 
     <QueryClientProvider client = {queryClient}>
-      <div className="flex flex-col ">
-        <nav>
-       <Header />
-        </nav>
-       
-       <main className="grow">
-        <>
-        <Routes >
-          <Route path="/" element={<Home />} />
-          <Route path="/orders" element={<ForOrders />} />
-           <Route path="/details/:id" element ={<DetailedDie />} />
-          {/* <Route path="/die-section" element={<DieSection />} /> */}
-          <Route path="/about-us" element={<About />} />
-          
-          {/* <Route path="/contact-us" element={<Contact />} /> */}
+      <ReactQueryDevtools initialIsOpen = {false} />
+     <BrowserRouter >
 
+     <Routes>
+      <Route element={<AppLayout />}>
+      <Route path="/" element={<Home />} />
+       <Route path="/orders" element={<ForOrders />} />
+        <Route path="/diesdetails/:id" element ={<DetailedDie />} />
 
+        <Route path="/about-us" element={<About />} />
           <Route path="/sign-up" element={<Login />} />
+
+
+
+         <Route  
+         path="/app"
+           element = {
+              <Protected>
+                <Outlet />
+              </Protected>
+           }
+         >
+
+         <Route index element = { <Navigate replace to ="dashboard" />}/>
+         <Route path= "dashboard" element = {<DashBoard/>}/>
+          <Route path="dieSection" element={<DieSection />} />
+         </Route>
+
+
           <Route path="*" element={<Error />} />
-        </Routes>
-        </>
-       </main>
-      <Footer />
-      </div>
-     
+          </Route>
+     </Routes>
+    
+
+     </BrowserRouter>
     </QueryClientProvider>
   )
 }
